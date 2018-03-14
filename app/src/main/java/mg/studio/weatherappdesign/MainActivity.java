@@ -15,6 +15,13 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
+import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,9 +30,52 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
     public void btnClick(View view) {
         new DownloadUpdate().execute();
+    }
+    public void btnClick_refresh(View view) {
+        Date currDate = new Date(System.currentTimeMillis());
+        String strDate = format.format(currDate);
+        String strWeek = getWeek(strDate);
+        ((TextView)findViewById(R.id.tv_date)).setText(strDate);
+        ((TextView)findViewById(R.id.tv_week)).setText(strWeek);
+        new DownloadUpdate().execute();
+    }
+    private String getWeek(String time) {
+
+        String Week = "";
+        //SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar c = Calendar.getInstance();
+        try {
+            c.setTime(format.parse(time));
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        if (c.get(Calendar.DAY_OF_WEEK) == 1) {
+            Week += "SUNDAY";
+        }
+        if (c.get(Calendar.DAY_OF_WEEK) == 2) {
+            Week += "MONDAY";
+        }
+        if (c.get(Calendar.DAY_OF_WEEK) == 3) {
+            Week += "TUESDAY";
+        }
+        if (c.get(Calendar.DAY_OF_WEEK) == 4) {
+            Week += "WEDNESDAY";
+        }
+        if (c.get(Calendar.DAY_OF_WEEK) == 5) {
+            Week += "THURSDAY";
+        }
+        if (c.get(Calendar.DAY_OF_WEEK) == 6) {
+            Week += "FRIDAY";
+        }
+        if (c.get(Calendar.DAY_OF_WEEK) == 7) {
+            Week += "SATURDAY";
+        }
+        return Week;
     }
 
 
@@ -35,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... strings) {
             String stringUrl = "http://mpianatra.com/Courses/info.txt";
+
             HttpURLConnection urlConnection = null;
             BufferedReader reader;
 

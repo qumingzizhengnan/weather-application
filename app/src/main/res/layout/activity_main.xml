@@ -10,6 +10,7 @@
     tools:context="mg.studio.weatherappdesign.MainActivity">
 
     <TextView
+        android:id="@+id/tv_week"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
@@ -113,10 +114,23 @@
                 android:gravity="right">
 
 
+                <Button
+                    android:id="@+id/bt_refresh"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignBaseline="@+id/temperature_of_the_day"
+                    android:layout_alignBottom="@+id/temperature_of_the_day"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/bt_refresh_selector"
+                    android:drawableLeft="@drawable/refresh"
+                    android:onClick="btnClick_refresh"/>
+
                 <TextView
                     android:id="@+id/temperature_of_the_day"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:gravity="right"
                     android:text="28"
                     android:textColor="@android:color/white"
@@ -131,7 +145,8 @@
                     android:gravity="right"
                     android:text="°C"
                     android:textColor="@android:color/white"
-                    android:textSize="22sp" />
+                    android:textSize="22sp"
+                    android:id="@+id/textView" />
 
 
             </RelativeLayout>
@@ -176,12 +191,15 @@
                 app:srcCompat="@drawable/rainy_small" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/tv_nextday_background"
                 android:gravity="center"
+                android:singleLine="true"
                 android:text="mon"
                 android:textAllCaps="true"
-                android:textColor="#909090" />
+                android:textColor="#111111" />
         </LinearLayout>
 
         <LinearLayout
@@ -197,12 +215,13 @@
                 app:srcCompat="@drawable/partly_sunny_small" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
                 android:gravity="center"
                 android:text="tue"
                 android:textAllCaps="true"
-                android:textColor="#909090" />
+                android:textColor="#111111" />
         </LinearLayout>
 
         <LinearLayout
@@ -218,12 +237,13 @@
                 app:srcCompat="@drawable/windy_small" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
                 android:gravity="center"
                 android:text="thu"
                 android:textAllCaps="true"
-                android:textColor="#909090" />
+                android:textColor="#111111" />
         </LinearLayout>
 
         <LinearLayout
@@ -239,12 +259,13 @@
                 app:srcCompat="@drawable/sunny_small" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="25dp"
                 android:gravity="center"
                 android:text="fri"
                 android:textAllCaps="true"
-                android:textColor="#909090" />
+                android:textColor="#111111"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
