@@ -1,25 +1,35 @@
-﻿# Weather application – Assignment001
-The final result is as shown below
-![Weather application](https://github.com/qumingzizhengnan/weather-application/blob/master/pic/1.gif)
+﻿# Weather application – Assignment002
+=====================================================================
+The final result is as shown below<br>
+![Weather application002]( https://github.com/qumingzizhengnan/weather-application/blob/002/pic/2_1.gif) <br>
 
-Detailed steps are as follows:
+##Part 1
+---------------------------------------------------------------------
+###[1] Check network connection
+There is a java class for checking network connection.<br>
+![checkNetworkConnection](https://github.com/qumingzizhengnan/weather-application/blob/002/pic/check_net.png)
+<br> 
+And use it in the MainAciviy.java file.<br>
+If the network connection fails, the app cannot update the weather information.<br>
+![checkNetworkConnection](https://github.com/qumingzizhengnan/weather-application/blob/002/pic/check_net2.png)
+<br>
 
-[1] adding the new icon to the application
-The new icon was made by photoshop.
-The code is modified as follows.
-![adding new icon](https://github.com/qumingzizhengnan/weather-application/blob/master/pic/changeIcon.png)
-![adding new icon](https://github.com/qumingzizhengnan/weather-application/blob/master/pic/3.png)
+###[2] Get xml file about weather
+Get the xml file from the website that posted the weather forecast.<br>
+![get Xml file](https://github.com/qumingzizhengnan/weather-application/blob/002/pic/get_xml.png) 
+<br>
+The Xml file just like this:<br>
+![xml file](https://github.com/qumingzizhengnan/weather-application/blob/002/pic/xmlfile.png)
+<br>
+###[3] Parse the xml file
+This is the function for xml parsing.<br>
+![parse xml file]( https://github.com/qumingzizhengnan/weather-application/blob/002/pic/xml_parse.png)
+<br>
+####[4] Update related information
+Update the date, temperature and the type of today.<br>
+![update today](https://github.com/qumingzizhengnan/weather-application/blob/002/pic/update_today.png)
+The codes about update the information of next days.<br>
+![update future](https://github.com/qumingzizhengnan/weather-application/blob/002/pic/update_week.png)
 
-[2] adding the blue background
-An xml file was added to achieve this adding.
-![adding blue bg](https://github.com/qumingzizhengnan/weather-application/blob/master/pic/1.png)
-![adding blue bg](https://github.com/qumingzizhengnan/weather-application/blob/master/pic/2.png)
-
-[3] adding the refresh button
-![adding blue bg](https://github.com/qumingzizhengnan/weather-application/blob/master/pic/bt_refresh.png)
-
-[4] when the refresh button is pressed, the temperature, the date and the day of the week are all updated
-The codes of the btClick_refresh() are as follow. 
-![refresh](https://github.com/qumingzizhengnan/weather-application/blob/master/pic/btClick.png)
 
 
